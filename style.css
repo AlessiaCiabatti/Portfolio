@@ -533,6 +533,28 @@ tr:hover td {
   /* 1s per ciclo di animazione, infinito loop */
 }
 
+.dropdown-menu.show {
+  /* display: block; */
+  display: flex;
+  /* justify-content: unset; */
+  height: 40vh;
+  width: 300px;
+  margin-top: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dropdown-menu.show a{
+  padding: 20px;
+}
+
+.overlay{
+  background-color: gray;
+  height: 100px;
+  width: 100px;
+}
+
+
 
 @media (max-width: 575.98px) {
 
