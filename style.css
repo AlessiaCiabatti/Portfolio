@@ -43,7 +43,7 @@ h1,
 /* ------ Button ------ */
 .type--A {
   --line_color: #000000;
-  --back_color: #c9e4ff;
+  --back_color: #ffffff;
 }
 
 .position_contact {
@@ -365,11 +365,11 @@ h2 {
   right: 200px;
 }
 
-.line_work{
+.line_work {
   right: 112px;
 }
 
-.line_tecnologie{
+.line_tecnologie {
   border: 2px solid #c9e4ff;
   width: 100px;
   display: block;
@@ -385,13 +385,14 @@ h2 {
 img.card-img-top {
   height: auto;
   width: 70px;
+  margin-top: 15px;
 }
 
 .card {
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
-  0px 10px 20px rgba(0,0,0,0.05),
-  0px 20px 20px rgba(0,0,0,0.05),
-  0px 30px 20px rgba(0,0,0,0.05);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.10),
+    0px 10px 20px rgba(0, 0, 0, 0.05),
+    0px 20px 20px rgba(0, 0, 0, 0.05),
+    0px 30px 20px rgba(0, 0, 0, 0.05);
   border: none;
   background: linear-gradient(to top, #c9e4ff, #ffffff);
 }
@@ -459,19 +460,24 @@ table {
   border: 1px solid #eee;
   border-bottom: 2px solid #c9e4ff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.10),
-              0px 10px 20px rgba(0, 0, 0, 0.05),
-              0px 20px 20px rgba(0, 0, 0, 0.05),
-              0px 30px 20px rgba(0, 0, 0, 0.05);
-  table-layout: fixed; /* Added to ensure fixed layout */
-  width: 100%; /* Ensure the table takes the full width of its container */
+    0px 10px 20px rgba(0, 0, 0, 0.05),
+    0px 20px 20px rgba(0, 0, 0, 0.05),
+    0px 30px 20px rgba(0, 0, 0, 0.05);
+  table-layout: fixed;
+  /* Added to ensure fixed layout */
+  width: 100%;
+  /* Ensure the table takes the full width of its container */
 }
 
 td {
   color: #999;
   border: 1px solid #eee;
-  padding: 12px; /* Changed padding for consistency */
-  text-align: center; /* Center the content in the cells */
-  width: 33.33%; /* Set width to ensure even distribution in each row */
+  padding: 12px;
+  /* Changed padding for consistency */
+  text-align: center;
+  /* Center the content in the cells */
+  width: 33.33%;
+  /* Set width to ensure even distribution in each row */
 }
 
 tr:hover {
@@ -483,7 +489,7 @@ tr:hover td {
 }
 
 
-.html{
+.html {
   height: 50px;
 }
 
@@ -502,31 +508,82 @@ tr:hover td {
   text-decoration: none;
 }
 
-@media (max-width: 575.98px) { 
+.mail:hover{
+  text-decoration: underline;
+}
+
+@keyframes move-side {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fa-hand-point-up {
+  font-size: 25px;
+  color: #197AFF;
+  animation: move-side 1s infinite;
+  /* 1s per ciclo di animazione, infinito loop */
+}
+
+
+@media (max-width: 575.98px) {
+
   .pc,
-  .my_img{
+  .my_img {
     display: none;
   }
 
-  .hero_description h5, p{
+  .hero_description h5,
+  p {
     display: block;
   }
 
-  h1{
+  .hero h1 {
     margin-bottom: 20%;
+    font-size: 3rem;
   }
 
-  p{
-    margin-bottom: 50px;
+  p {
+    margin-bottom: 40px;
   }
 
-  .line, .line_tecnologie{
+  .line,
+  .line_tecnologie {
     display: none;
   }
 
-  .icon{
-    margin-top: 40%;
+  .icon {
+    margin-top: 20%;
   }
+
+  .description {
+    margin-bottom: 30px;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .curved-bg {
+    background: linear-gradient(to top, #dcebff, #ffffff);
+    border-bottom-left-radius: 100% 20%;
+    border-bottom-right-radius: 100% 20%;
+    height: 750px;
+    margin-bottom: 50px;
+  }
+
+  swiper-slide {
+    padding-bottom: 0px;
+  }
+
 }
 
 /* mobile */
