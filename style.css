@@ -419,8 +419,14 @@ h3 {
   background: linear-gradient(to top, #dcebff, #ffffff);
   border-bottom-left-radius: 100% 20%;
   border-bottom-right-radius: 100% 20%;
-  height: 850px;
+  height: 100%;
+  padding-bottom: 100px;
   margin-bottom: 50px;
+}
+
+.lavori{
+  width: 100%;
+  margin-top: 100px;
 }
 
 
@@ -437,29 +443,14 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 100px;
 }
 
-.arrow_swiper{
-  /* position: absolute; */
+.icon_video{
+  height: auto;
+  width: 40px;
 }
 
-
-
-@media (max-width: 760px) {
-  .swiper-button-next {
-    right: 20px;
-    transform: rotate(90deg);
-  }
-
-  .swiper-button-prev {
-    left: 20px;
-    transform: rotate(90deg);
-  }
-}
-/* Aggiungi il padding direttamente al contenitore delle slide */
-.swiper-wrapper {
-  padding-bottom: 100px !important;
-}
 
 table {
   font-family: 'Arial';
@@ -516,7 +507,7 @@ tr:hover td {
   text-decoration: none;
 }
 
-.mail:hover{
+.mail:hover {
   text-decoration: underline;
 }
 
@@ -552,11 +543,11 @@ tr:hover td {
   justify-content: center;
 }
 
-.dropdown-menu.show a{
+.dropdown-menu.show a {
   padding: 20px;
 }
 
-.overlay{
+.overlay {
   background-color: gray;
   height: 100px;
   width: 100px;
@@ -633,15 +624,6 @@ tr:hover td {
     margin-bottom: 50px;
   }
 
-  .bg_img {
-    position: absolute;
-    bottom: 0px;
-  }
-
-  .my_img {
-    height: 450px;
-  }
-
   .card {
     margin-bottom: 70px;
   }
@@ -657,8 +639,17 @@ tr:hover td {
     bottom: 0px;
   }
 
-  .my_img {
-    height: 550px;
+  .bg_img_pc {
+    width: 100%;
+    /* Rimane al 75%, ma puoi abbassarla se su 1080x720 è troppo larga */
+    height: auto;
+  }
+
+  .my_img_pc {
+    width: 100%;
+    /* L'immagine occupa il 100% della larghezza del div */
+    height: auto;
+    /* Mantiene le proporzioni */
   }
 
   .card {
@@ -668,7 +659,8 @@ tr:hover td {
 
 
 /* pc - Media query per schermi più grandi, incluso 1080x720 */
-@media (min-width: 1080px) {  /* Cambiato da 1200px a 1080px per includere 1080p */
+@media (min-width: 1080px) {
+  /* Cambiato da 1200px a 1080px per includere 1080p */
 
   .hero_description {
     width: 150%;
@@ -680,22 +672,27 @@ tr:hover td {
 
   p {
     margin-bottom: 30px;
-    width: 100%;  /* Puoi usare una percentuale più alta se serve su schermi più piccoli */
+    width: 100%;
+    /* Puoi usare una percentuale più alta se serve su schermi più piccoli */
   }
 
   .hero h1 {
-    font-size: 3.5rem;  /* Puoi ridurre leggermente la dimensione se necessario per schermi più piccoli */
+    font-size: 3.5rem;
+    /* Puoi ridurre leggermente la dimensione se necessario per schermi più piccoli */
     margin-bottom: 30px;
   }
 
   .bg_img_pc {
-    width: 100%;  /* Rimane al 75%, ma puoi abbassarla se su 1080x720 è troppo larga */
+    width: 100%;
+    /* Rimane al 75%, ma puoi abbassarla se su 1080x720 è troppo larga */
     height: auto;
   }
 
   .my_img_pc {
-    width: 100%;  /* L'immagine occupa il 100% della larghezza del div */
-    height: auto;  /* Mantiene le proporzioni */
+    width: 100%;
+    /* L'immagine occupa il 100% della larghezza del div */
+    height: auto;
+    /* Mantiene le proporzioni */
   }
 
   .icon {
@@ -731,13 +728,15 @@ tr:hover td {
     font-size: 4rem;
   }
 
-  .bg_img_pc{
-    width: 100%; /* Il div occuperà il 75% della larghezza della pagina */
+  .bg_img_pc {
+    width: 100%;
+    /* Il div occuperà il 75% della larghezza della pagina */
     height: auto;
   }
 
   .my_img_pc {
-    width: 100%; /* L'immagine occupa il 100% della larghezza del div */
+    width: 100%;
+    /* L'immagine occupa il 100% della larghezza del div */
     height: auto;
   }
 

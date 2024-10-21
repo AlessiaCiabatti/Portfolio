@@ -1,18 +1,3 @@
-var swiper = new Swiper('.swiper', {
-  slidesPerView: 3,
-  loop: true,
-  direction: getDirection(),
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  on: {
-    resize: function () {
-      swiper.changeDirection(getDirection());
-    },
-  },
-});
-
 function getDirection() {
   var windowWidth = window.innerWidth;
   var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
@@ -21,7 +6,7 @@ function getDirection() {
 }
 
 // richiama la classe
-const outputWork = document.querySelector('.mySwiper')
+const outputWork = document.querySelector('.work')
 // crearre array di oggetti con le info di work section
 const workSection = [
   {
@@ -84,11 +69,18 @@ const workSection = [
 
 for (let work of workSection) {
   // Genera le immagini di descrizione
-  // const descriptionImages = work.description.map(img => `<img src="${img}" alt="Icona" style="width: 30px; margin-right: 5px;">`).join('');
+  const descriptionImages = work.description.map(img => 
+    `<img src="${img}" alt="Icona" style="width: 40px; margin-right: 5px;">`
+  ).join('');
 
   // Aggiungi la slide al container Swiper
   outputWork.innerHTML += `
-  <div class="swiper-slide"><iframe title="vimeo-player" src="${work.video}" width="640" height="360" frameborder="0" allowfullscreen></iframe></div>
+    <div class="col">
+      <iframe title="vimeo-player" src="${work.video}" width="400" height="300" frameborder="0" allowfullscreen></iframe>
+      <div class="mb-5">
+        ${descriptionImages}
+      </div>
+    </div>
   `;
 }
 
