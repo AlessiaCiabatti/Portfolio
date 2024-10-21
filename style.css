@@ -683,9 +683,14 @@ tr:hover td {
     font-size: 4.5rem;
   }
 
-  .my_img_pc {
+  .bg_img_pc{
+    width: 80%; /* Il div occuperà il 50% della larghezza della pagina */
     height: auto;
-    width: 80%;
+  }
+
+  .my_img_pc {
+    width: 100%; /* L'immagine occupa il 100% della larghezza del div */
+    height: auto;
   }
 
   .icon {
