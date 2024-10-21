@@ -1,27 +1,24 @@
-const swiperEl = document.querySelector('swiper-container')
-Object.assign(swiperEl, {
+var swiper = new Swiper('.swiper', {
+  slidesPerView: 3,
   loop: true,
-  slidesPerView: 1,
-  spaceBetween: 10,
-  pagination: {
-    clickable: true,
+  direction: getDirection(),
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
-  breakpoints: {
-    576: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 40,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 50,
+  on: {
+    resize: function () {
+      swiper.changeDirection(getDirection());
     },
   },
 });
-swiperEl.initialize();
+
+function getDirection() {
+  var windowWidth = window.innerWidth;
+  var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+  return direction;
+}
 
 // richiama la classe
 const outputWork = document.querySelector('.mySwiper')
@@ -91,7 +88,7 @@ for (let work of workSection) {
 
   // Aggiungi la slide al container Swiper
   outputWork.innerHTML += `
-  <swiper-slide><iframe title="vimeo-player" src="${work.video}" width="640" height="360" frameborder="0" allowfullscreen></iframe></swiper-slide>
+  <div class="swiper-slide"><iframe title="vimeo-player" src="${work.video}" width="640" height="360" frameborder="0" allowfullscreen></iframe></div>
   `;
 }
 
