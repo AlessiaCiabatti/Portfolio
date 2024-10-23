@@ -64,25 +64,6 @@
           <img src="img/logo192x192.png" alt="">
           <span class="ms-2">Alessia Ciabatti</span>
         </a>
-        <!-- <div class="dropdown">
-          <button class="btn" type="button" data-bs-toggle="dropdown">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <ul class="dropdown-menu">
-            <a class="navbar-brand" href="#specializzazioni">
-              Specializzazioni
-            </a>
-            <a class="navbar-brand" href="#lavori">
-              Lavori
-            </a>
-            <a class="navbar-brand" href="#tecnologie">
-              Tecnologie
-            </a>
-            <a class="navbar-brand" href="#contatti">
-              Contatti
-            </a>
-          </ul>
-        </div> -->
       </div>
     </div>
   </nav>
@@ -119,7 +100,7 @@
 
       <div class="d-flex d-block d-lg-none justify-content-center">
         <div class="bg_img">
-          <img class="my_img d-sm-mone" src="img/foto_ok.png" alt="">
+          <img class="my_img d-sm-none" src="img/foto_ok.png" alt="">
         </div>
       </div>
 
@@ -186,7 +167,7 @@
       <div class="col d-flex justify-content-center">
         <div class="card" style="width: 24rem;">
           <div class="d-flex justify-content-center">
-            <img src="/img/icon_card/coding.png" class="card-img-top" alt="...">
+            <img src="img/icon_card/coding.png" class="card-img-top" alt="...">
           </div>
           <div class="card-body">
             <h3 class="card-title mb-3">Coding</h3>
@@ -200,7 +181,7 @@
       <div class="col d-flex justify-content-center">
         <div class="card" style="width: 24rem;">
           <div class="d-flex justify-content-center">
-            <img src="/img/icon_card/icon_ux_ui.png" class="card-img-top" alt="...">
+            <img src="img/icon_card/icon_ux_ui.png" class="card-img-top" alt="...">
           </div>
           <div class="card-body">
             <h3 class="card-title mb-3">UX/UI Design</h3>
@@ -214,7 +195,7 @@
       <div class="col d-flex justify-content-center">
         <div class="card" style="width: 24rem;">
           <div class="d-flex justify-content-center">
-            <img src="/img/icon_card/graphic_design.png" class="card-img-top" alt="...">
+            <img src="img/icon_card/graphic_design.png" class="card-img-top" alt="...">
           </div>
           <div class="card-body">
             <h3 class="card-title mb-3">Graphic Design</h3>
@@ -229,11 +210,11 @@
   </section>
 
 
-  <!-- swiper -->
+  <!-- lavori -->
   <section id="lavori" class="curved-bg">
-    <div class="d-flex flex-column align-items-center">
+    <div class="d-flex flex-column align-items-center justify-content-center">
       <span class="line line_work"></span>
-      <h2 cmas>Lavori</h2>
+      <h2>Lavori</h2>
       <div class="lavori text-center">
         <div class="row work">
           <!-- <div class="col">
@@ -249,11 +230,11 @@
             <iframe title="vimeo-player" src="https://player.vimeo.com/video/1011772838?h=cb2e88c454" width="450" height="360" frameborder="0" allowfullscreen></iframe>
           </div>
         </div> -->
+        </div>
       </div>
-    </div>
 
   </section>
-  <!-- fine swiper -->
+  <!-- fine lavori -->
 
   <!-- linguaggi -->
   <section id="tecnologie">
@@ -299,21 +280,37 @@
   <section id="contatti" class="prova">
 
     <div class="footer">
-      <div class="d-flex flex-column align-items-center pt-5">
-        <h5>Contatti</h5>
-        <a class="mail mb-3" href="mailto:alessiaciaba@gmail.com" target="_blank">alessiaciaba@gmail.com</a>
-        <div class="icon_footer mt-3">
-          <a class="me-3" href="https://github.com/AlessiaCiabatti" target="_blank"><i
-              class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/alessiaciabatti/" target="_blank"><i
-              class="fa-brands fa-linkedin"></i></a>
-        </div>
 
+      <div class="container_form">
+        <form action="form.php" method="post">
+          <h3>Contattami</h3>
+
+          <?php
+          if (isset($_GET['error'])) {
+            $Msg = "Completare i campi richiesti";
+
+            echo '<div class="alert alert-danger">' . $Msg . '</div>';
+          }
+
+          if (isset($_GET['success'])) {
+            $Msg = 'L\'operazione è andata a buon fine';
+
+            echo '<div class="alert alert-success">' . $Msg . '</div>';
+          }
+
+          ?>
+
+          <input type="text" name="name" placeholder="Nome">
+          <input type="email" name="email" placeholder="E-mail">
+          <textarea name="message" rows="4" placeholder="Messaggio"></textarea>
+          <button type="submit" name="btn-send">SEND</button>
+        </form>
       </div>
+
+    </div>
 
 
   </section>
-
   <script src="script.js"></script>
 
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9be3d066-3497-4a7e-9f28-3db4b0fa7d20"
